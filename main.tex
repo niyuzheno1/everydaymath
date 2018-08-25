@@ -30,4 +30,71 @@ $\leftarrow$
 
 We can solve it and try to see whether the $u_t = u_{xx}$ holds, when $z=\frac{x}{\sqrt t}$
 
+\section{mean-valued property}
+
+$$\Phi(x,t) = \frac{1}{(4\pi t)^{n/2}} e^{-\frac{|x|^2}{4t}}$$
+$$\phi = \frac{1}{r^n} \int_{E(r)} u(y,s) \frac{|y|^2}{s^2} dy ds$$
+
+by change variable of heat equation:
+
+$$\phi =   \frac{1}{r^n} \int_{E(1)} u(ry,r^2s) \frac{r^2 |y|^2}{r^4 s^2} r^n dy r^2 ds$$
+
+$$\phi =   \int_{E(1)} u(ry,r^2s) \frac{ |y|^2}{s^2}  dy  ds$$
+
+$$\phi' =  \int_{E(1)} (\sum_{i} u_{y_i}(ry,r^2s) y_i+2rs u_s(ry,r^2s)) \frac{ |y|^2}{s^2}  dy  ds$$
+
+$$\phi' =  \int_{E(1)} \sum_{i} u_{y_i} y_i \frac{ |y|^2}{s^2}+2rs u_s \frac{ |y|^2}{s^2} dy  ds$$
+
+by change variable of heat equation:
+
+$$\phi' =  \int_{E(1)} \sum_{i} u_{y_i} ry_i \frac{r^4 |y|^2}{r^2s^2}+2rs u_s \frac{ r^4|y|^2}{r^2s^2} \frac{dy}{r^n}  \frac{ds}{r^{2}}$$
+
+$$\phi' =  \frac{1}{r^{n-1}}\int_{E(1)} \sum_{i} u_{y_i} y_i \frac{ |y|^2}{s^2}+2s u_s \frac{ |y|^2}{s^2} dy  ds$$
+
+Let $$A:= \int_{E(1)} \sum_{i} u_{y_i} y_i \frac{ |y|^2}{s^2}dy  ds$$
+
+$$B:= \int_{E(1)} 2s u_s \frac{ |y|^2}{s^2} dy  ds$$
+
+$$\Phi(x,t) = \frac{1}{(4\pi t)^{n/2}} e^{-\frac{|x|^2}{4t}}$$
+Let $$A:= \int_{E(1)} \sum_{i} u_{y_i} y_i \frac{ |y|^2}{s^2}dy  ds$$
+
+$$B:= \int_{E(1)} 2s u_s \frac{ |y|^2}{s^2} dy  ds$$
+
+$$r^{-n} = \frac{1}{(4\pi (-s))^{n/2}} e^{-\frac{|y|^2}{-4s}} $$
+
+$$-n \ln(r) = \ln(\frac{1}{(4\pi (-s))^{n/2}} ) + (-\frac{|y|^2}{-4s})$$
+
+$$-n \ln(r) = -\frac{n}{2}\ln({-4\pi s} ) + \frac{|y|^2}{4s}$$
+
+$$ 0= -\frac{n}{2}\ln({-4\pi s} ) + \frac{|y|^2}{4s}+n \ln(r)$$
+
+Let $\psi = -\frac{n}{2}\ln({-4\pi s} ) + \frac{|y|^2}{4s}+n \ln(r)$ so that we can carry out integration by parts later on.
+
+$$B:= \int_{E(1)} 2s u_s \frac{ |y|^2}{s^2} dy  ds = \int_{E(1)} 2 u_s \frac{ |y|^2}{s} dy  ds$$
+
+Since $\psi_{y_i} = \frac{y_i}{2s}$, $\frac{ |y|^2}{s} = 2\sum \psi_{y_i} y_i$
+
+$$B=  4 \int_{E(1)}  u_s \sum y_i \psi_{y_i}  dy  ds = -4 \int_{E(1)}  n u_s \psi +\sum u_{s,y_i} y_i  \psi  dy  ds $$ 
+
+$$B=  4 \int_{E(1)}  u_s \sum y_i \psi_{y_i}  dy  ds = -4 \int_{E(1)}  n u_s \psi +\sum u_{s,y_i} y_i  \psi  dy  ds $$ 
+
+$$\int_{E(1)} \sum u_{s,y_i} y_i  \psi  dy  ds = \int_{E(1)} \sum u_{y_i,s} y_i  \psi  dy  ds = -\int_{E(1)} \sum u_{y_i} y_i  \psi_s  dy  ds$$
+
+$$-\int_{E(1)} \sum u_{y_i} y_i  \psi_s  dy  ds = \int_{E(1)} \sum u_{y_i} y_i   \frac{2ns+|y|^2}{4s^2}  dy  ds $$
+
+$$B  = -4 \int_{E(1)}  n u_s \psi dy ds -4 \int_{E(1)} \sum u_{s,y_i} y_i  \psi  dy  ds$$
+
+$$B= -4 \int_{E(1)}  n u_s \psi dy ds -4 \int_{E(1)} \sum u_{y_i} y_i   \frac{2ns+|y|^2}{4s^2}  dy  ds $$
+$$=  -4 \int_{E(1)}  n u_s \psi dy ds -4 \int_{E(1)} \sum u_{y_i} y_i  \frac{n}{2s}  dy  ds - 4 \int_{E(1)} \sum u_{y_i} y_i\frac{|y|^2}{4s^2}  dy  ds $$
+
+$$B = -4 \int_{E(1)}  n u_s \psi dy ds -4 \int_{E(1)} \sum u_{y_i} y_i  \frac{n}{2s}  dy  ds - A$$
+
+$$\int_{E(1)}  4 n u_s \psi  + 2  \sum u_{y_i} y_i  \frac{n}{s}  dy  ds$$
+
+$$\int_{E(1)}  4 n \Delta u \psi  + 2  \sum u_{y_i} y_i  \frac{n}{s}  dy  ds$$
+
+$$\int_{E(1)}  4 n \sum u_{y_i,y_i} \psi  + 2  \sum u_{y_i} y_i  \frac{n}{s}  dy  
+ds$$
+
+$$\int_{E(1)}  -n \sum u_{y_i} \frac{y_i}{s}  + 2  \sum u_{y_i} y_i  \frac{n}{s}  dy  ds = 0$$
 \end{document}
