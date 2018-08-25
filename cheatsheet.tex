@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{cheetsheet}
+\author{Zack Ni }
+\date{August 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{basic identities for combinatorics}
+
+\subsection{change to coefficient techniques}
+
+$${{n}\choose{r}} = {{n}\choose{n-r}} = [z^{n-r}] (1+z)^n = [z^n] z^r(1+z)^n$$
+
+Remember: we need to try to factor the $z^n$ out of the summation part. 
+
+\section{basic identities for integration}
+
+\subsection{Gamma identity}
+
+$$\int_{0}^{\infty} t^n e^{-zt} = \frac{n!}{z^{n+1}} $$
+
+Remember: coefficient is factorial but move z to the denominator and give it power to n + 1
+
+\subsection{convergence restricted to a ball region}
+
+$$\int_{V} = \int_{B(0,\epsilon)} + \int_{V-B(0,\epsilon)} $$
+
+Remember: total = inside the ball and outside the ball
+
+\end{document}
